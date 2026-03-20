@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ai-platform-admin
+
+  # 以下配置供后续开发时填入 mysql/达梦 连接
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/ai_platform?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&createDatabaseIfNotExist=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      # 全局雪花算法分配 ID
+      id-type: assign_id

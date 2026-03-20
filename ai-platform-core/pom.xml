@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.nariit.oms.ai</groupId>
+        <artifactId>ai-platform</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ai-platform-core</artifactId>
+    <name>ai-platform-core</name>
+    <description>平台核心层（动态代理与路由大模型、MCP 客户端）</description>
+
+    <dependencies>
+        <!-- 引入 Common -->
+        <dependency>
+            <groupId>com.nariit.oms.ai</groupId>
+            <artifactId>ai-platform-common</artifactId>
+        </dependency>
+
+        <!-- Spring AI MCP 客户端基石 -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-mcp-client</artifactId>
+        </dependency>
+        
+        <!-- Spring AI OpenAI/Qwen 支持 -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-openai</artifactId>
+        </dependency>
+    </dependencies>
+</project>

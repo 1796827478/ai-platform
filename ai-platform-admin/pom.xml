@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.nariit.oms.ai</groupId>
+        <artifactId>ai-platform</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ai-platform-admin</artifactId>
+    <name>ai-platform-admin</name>
+    <description>平台控制面应用（提供大模型、MCP 挂载、应用授权的管理后台接口）</description>
+
+    <dependencies>
+        <!-- 引入 Common -->
+        <dependency>
+            <groupId>com.nariit.oms.ai</groupId>
+            <artifactId>ai-platform-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 数据库驱动 (MySQL) -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        
+        <!-- 达梦数据库驱动 (可根据贵司内部nexus坐标替换) -->
+        <!-- <dependency>
+            <groupId>com.dameng</groupId>
+            <artifactId>DmJdbcDriver18</artifactId>
+            <version>8.1.2.141</version>
+        </dependency> -->
+
+        <!-- 代码生成器 (仅测试作用域) -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.7</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.33</version>
+            <scope>test</scope>
+        </dependency>
+        
+    </dependencies>
+</project>
