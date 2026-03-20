@@ -11,7 +11,8 @@ export default defineConfig({
     }
   },
   server: {
-    port: 3000,
+    host: '127.0.0.1',
+    port: 5173,
     open: true, // 启动后自动打开浏览器
     proxy: {
       // 本地开发环境通过代理解决跨域问题请求
