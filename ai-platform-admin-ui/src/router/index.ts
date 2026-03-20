@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,7 +19,7 @@ const router = createRouter({
 });
 
 // 路由守卫拦截
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   // 管理后台简单鉴权拦截逻辑
   // const token = localStorage.getItem('admin_token');
   // if (!token && to.path !== '/login') {
