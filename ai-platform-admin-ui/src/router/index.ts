@@ -1,15 +1,26 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
+import BasicLayout from '../layout/BasicLayout.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/dashboard'
-  },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: () => import('../views/Home.vue'),
-    meta: { title: '平台数据仪表盘' }
+    component: BasicLayout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('../views/Home.vue'),
+        meta: { title: '平台数据仪表盘' }
+      },
+      {
+        path: 'model-config',
+        name: 'ModelConfig',
+        component: () => import('../views/model/ModelConfig.vue'),
+        meta: { title: '大模型网关配置' }
+      }
+      // 此处留空，方便日后增加 MCP挂载管理 和 应用授权 的子组件
+    ]
   }
 ];
 
@@ -20,15 +31,7 @@ const router = createRouter({
 
 // 路由守卫拦截
 router.beforeEach((to, _from, next) => {
-  // 管理后台简单鉴权拦截逻辑
-  // const token = localStorage.getItem('admin_token');
-  // if (!token && to.path !== '/login') {
-  //   next({ path: '/login' });
-  // } else {
-  //   document.title = (to.meta.title as string) || 'AI能力平台管理端';
-  //   next();
-  // }
-  document.title = (to.meta.title as string) || 'AI能力平台管理后台';
+  document.title = (to.meta.title as string) || '统一 AI 能力平台后台管理';
   next();
 });
 
